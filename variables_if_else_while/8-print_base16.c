@@ -10,15 +10,13 @@ int i;
 int j;
 for (i = 0; i < 9; i++)
 {
+putchar (i);
 if (i == 9)
 {
-putchar (i);
-}
 for (j = 'a'; j <= 'f'; j++)
 {
-if (j == 'f')
-{
 putchar ('j');
+if (j == 'f')
 }
 }
 }
