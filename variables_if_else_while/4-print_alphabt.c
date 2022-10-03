@@ -7,7 +7,7 @@
 int main(void)
 {
 int ch;
-for (ch = 'a'; ch < 'e' && ch < 'q'; ch++)
+for (ch = 'a'; ch < 'e' || ch < 'q'; ch++)
 {
 putchar(ch);
 }
