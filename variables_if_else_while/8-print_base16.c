@@ -8,16 +8,18 @@ int main(void)
 {
 int i;
 int j;
-for (i = 0; i < 9; i++)
+for (i = '0'; i < '9'; i++)
+{
+if (i == '9')
 {
 putchar (i);
-if (i == 9)
-{
+}
 for (j = 'a'; j <= 'f'; j++)
+{
+if (j == 'f')
 {
 putchar ('j');
 }
-break;
 }
 }
 putchar('\n');
