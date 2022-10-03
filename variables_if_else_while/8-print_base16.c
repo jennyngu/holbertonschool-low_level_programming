@@ -10,16 +10,14 @@ int i;
 int j;
 for (i = '0'; i < '9'; i++)
 {
+putchar ('9');  
 if (i == '9')
 {
-putchar (i);
-}
 for (j = 'a'; j <= 'f'; j++)
 {
+putchar ('j');  
 if (j == 'f')
 {
-putchar ('j');
-}
 }
 }
 putchar('\n');
