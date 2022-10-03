@@ -16,8 +16,8 @@ if (i == 9)
 for (j = 'a'; j <= 'f'; j++)
 {
 putchar ('j');
-if (j == 'f')
 }
+break;
 }
 }
 putchar('\n');
