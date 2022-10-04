@@ -1,11 +1,14 @@
 #include "main.h"
-/**
-*main - print single digit numbers of base 10, from 0
-*
-*Return: will always return 0
-*/
-int main(void)
+
+void	print_alphabet(void)
 {
-printf("_putchar\n");
-return (0);
+	int i;
+  
+	i = 'a';
+	while (i <= 'z')
+	{
+		_putchar(i);
+		i = i + 1;
+	}
+	_putchar('\n');
 }
