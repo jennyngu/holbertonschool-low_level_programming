@@ -14,4 +14,4 @@ oclean:
 fclean:
 	$(RM) -f *~ $(NAME) *.o
 re:
-	make main$(SRC) school$(SRC)
+	make main$(OBJ) school$(OBJ)
