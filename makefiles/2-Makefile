@@ -4,5 +4,5 @@ OBJ = .o
 NAME = school
 all: $(NAME)
 
-school: main$(SRC) school$(SRC)
+school: main$(OBJ) school$(OBJ) 
 	$(CC) main$(SRC) school$(SRC) -o $(NAME)
