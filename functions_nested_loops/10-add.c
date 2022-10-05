@@ -1,11 +1,16 @@
 #include "main.h"
 /**
- *add - adds to integers
- *Return: returns result of two integers
+ *add - adds two input int/arguments together
+ *
+ *@a: a is an integer input
+ *@b: b is an integer input
+ *Return: returns result of the two integers
  */
 
-int add(int i, int j)
+int add(int a, int b)
 {
-sum = i + j;
-_putchar ("%d + %d = %d", i, j, sum);
+	int n;
+
+	n = (a + b);
+	return (n);
 }
