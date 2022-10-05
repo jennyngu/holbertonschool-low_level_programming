@@ -2,7 +2,7 @@ CC = gcc
 SRC = .c
 OBJ = .o
 NAME = school
-all: school
+all: $(NAME)
 
 school: main$(SRC) school$(SRC)
 	$(CC) main$(SRC) school$(SRC) -o $(NAME)
