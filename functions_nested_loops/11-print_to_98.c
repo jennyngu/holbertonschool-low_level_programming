@@ -4,6 +4,8 @@
 /**
  *print_to_98 - prints numbers from 0 to 98 with commas and space
  *
+ *@n: n is where the countdown starts
+ *
  *Return: returns 0 if successful
  */
 
