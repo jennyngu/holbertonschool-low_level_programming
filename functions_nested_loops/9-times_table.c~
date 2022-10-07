@@ -1,0 +1,23 @@
+#include "main.h"
+/**
+ *times_table - prints the 9 times table, starting with 0
+ *
+ *Return: 0 if successful
+ */
+
+void times_table(void)
+{
+  int r;
+  int c;
+  
+  for(r = 0; r < 10; r++)
+  {
+    _putchar(r);
+    _putchar('\n');
+  }
+  for(c = 0; c < 10; c++)
+    {
+      _putchar(c);
+      _putchar('\n');
+    }
+}
