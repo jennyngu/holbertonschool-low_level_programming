@@ -2,6 +2,8 @@
 /**
  *print_line - prints an _ character followed by a new line
  *
+ *@n: is the number of lines to be printed
+ *
  *Return: returns the _ characters
  */
 
