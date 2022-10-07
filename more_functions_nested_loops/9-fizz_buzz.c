@@ -2,7 +2,7 @@
 /**
  *main - display fizz buzz
  *
- *Return: nothing 0
+ *Return: 0 if successful
  */
 
 int main(void)
@@ -30,7 +30,9 @@ int main(void)
 			printf("%i", i);
 		}
 		if (i != 100)
+		{
 			printf(" ");
+		}
 		i++;
 	}
 	printf("\n");
