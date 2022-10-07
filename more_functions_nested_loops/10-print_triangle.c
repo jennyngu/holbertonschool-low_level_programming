@@ -1,39 +1,37 @@
 #include "main.h"
-
-void print_char (char c, int timesToPrint)
-{
-	if (timesToPrint < 0)
-	{
-		for (_putchar(c);
-		timesToPrint++;
-		_putchar('\n');
-	}
-	return;
-}
-
 /**
+ *print_triangle - prints spaces and hashes to create a triangle
  *
- *top of tree downwards -- int size - 1 (gives number of spaces for that line)
+ *@size: the size of the triangle
  *
+ *Return: nothing (void)
  */
 
 void print_triangle(int size)
 {
 	int rows;
-	int numOfHashes;
+	int columns;
 
-	rows = 0;
-	numOfHashes = 1;
-	if (size <= 0)
+	columns = 1;
+	while (columns <= size && size > 0)
+	{
+		rows = 0;
+		while (rows < size - columns)
+		{
+			_putchar(' ');
+			rows++;
+		}
+		rows = 0;
+			while (rows < columns)
+		{
+			_putchar('#');
+			rows++;
+		}
+		_putchar('\n');
+		columns++;
+	}
+	if (columns == 1)
 	{
 		_putchar('\n');
-		return;
-	}
-	while (rows < size)
-	{
-		print_char(' ', size - 1);
-		print_char('#', numOfHashes);
-		rows = rows + 1;
-		numOfHashes = numOfHashes + 1;
 	}
 }
