@@ -17,10 +17,12 @@ void rev_string(char *str)
 
 	length = strlen(str);
 	StrMidPoint = length / 2;
-	for (i = 0; i < StrMidPoint; i++)
+	i = 0;
+	while (i < StrMidPoint)
 	{
 		tempStrHolder = str[i];
 		str[i] = str[length - i - 1];
 		str[length - i - 1] = tempStrHolder;
+		i++;
 	}
 }
