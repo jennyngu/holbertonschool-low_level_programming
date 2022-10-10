@@ -1,21 +1,21 @@
 #include "main.h"
 /**
- *_strlen - returns the length of a string
+ *_puts - prints a string
  *
- *@s: *s is a pointer that is a char type parameter
+ *@str: *str is a pointer that is a char type parameter
  *
- *Return: return 0 if successful
+ *Return: return nothing because void
  */
 
-int _strlen(char *s)
+void _puts(char *str)
 {
 	int i;
 
 	i = 0;
-	while ((i = 0) && s[i] != '\0')
+	while (str[i])
 	{
+		_putchar(str[i]);
 		i++;
-		return (s[i]);
 	}
-        return (0);
+        _putchar('\n');
 }
