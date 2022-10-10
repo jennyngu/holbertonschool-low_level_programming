@@ -1,0 +1,12 @@
+/**
+ *reset_to_98 - changes the value of given parameter to 98
+ *
+ *@n: *n is the int pointer named n
+ *
+ *Return: nothing because void
+ */
+
+void reset_to_98(int *n)
+{
+	*pointer = 98;
+}
