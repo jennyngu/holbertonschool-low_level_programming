@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  *puts2 - prints every second character, starting with the first char
  *
@@ -13,7 +12,11 @@ void puts2(char *str)
 	int i;
 	int length;
 
-	length = strlen(str);
+	length = 0;
+        while (str[length] != '\0')
+        {
+		length++;
+	}
 	i = 0;
 	while (i <= (length - 1))
 	{

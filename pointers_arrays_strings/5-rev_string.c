@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  *rev_string - reverses a string
  *
@@ -15,7 +14,11 @@ void rev_string(char *str)
 	int StrMidPoint;
 	char tempStrHolder;
 
-	length = strlen(str);
+	length = 0;
+        while (str[length] != '\0')
+        {
+                length++;
+	}
 	StrMidPoint = length / 2;
 	i = 0;
 	while (i < StrMidPoint)
