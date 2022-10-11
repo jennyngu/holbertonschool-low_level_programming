@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  *_strcpy - copies a string pointed to by source, including \0, to destination
  *@dest: pointer parameter, where the string gets copied to
