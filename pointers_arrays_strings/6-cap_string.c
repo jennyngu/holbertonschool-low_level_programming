@@ -19,39 +19,7 @@ char *cap_string(char *ptr)
 				ptr[i] = ptr[i] - 32;
 			}
 		}
-		else if (ptr[i] == ' ' || ptr[i] == 9 || ptr[i] == '\n')
-		{
-			i++;
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
-		}
-		else if (ptr[i] == ',' || ptr[i] == ';' || ptr[i] == '.')
-		{
-			i++;
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
-		}
-		else if (ptr[i] == '!' || ptr[i] == '?' || ptr[i] == '"')
-		{
-			i++;
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
-		}
-		else if (ptr[i] == '(' || ptr[i] == ')')
-		{
-			i++;
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
-		}
-		else if (ptr[i] == '{' || ptr[i] == '}')
+		while (ptr[i] < 'A' || ptr[i] > 'z')
 		{
 			i++;
 			if (ptr[i] >= 'a' && ptr[i] <= 'z')

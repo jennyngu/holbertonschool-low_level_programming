@@ -21,8 +21,9 @@ void reverse_array(int *a, int n)
 		 */
 		valueHolder = *(a + i);
 		/**
-		 *give the address of the second element whatever is in the
-		 *address of the first element + n - 1 - i
+		 *give address of the 2nd element whatevers in last i of array
+		 *a(ie. str) + n(ie. length) - 1 points to end of array,
+		 *-i decreases the end by 1 for next swap
 		 */
 		*(a + i) = *(a + n - 1 - i);
 		*(a + n - 1 - i) = valueHolder;
