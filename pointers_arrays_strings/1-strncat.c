@@ -34,12 +34,12 @@ char *_strncat(char *dest, char *src, int n)
 
 	destLength = _strlen(dest);
 	i = 0;
-/*strncat overwrites null char of dest. src i cant equal null char*/
-/*stop when n bytes is reached*/
+	/*func overwrites null char of dest. src i cant equal null char*/
+	/*stop when n bytes is reached*/
 	while (src[i] != '\0' && i < n)
 	{
-/*append src to dest*/
-/*increase destLength by i to account for len increase of dest*/
+		/*append src to dest*/
+		/*increase destLength by i to account for len increase of dest*/
 		dest[destLength + i] = src[i];
 		i++;
 	}
