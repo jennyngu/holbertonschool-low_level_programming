@@ -24,34 +24,18 @@ int _strlen(char *s)
 
 void puts_half(char *str)
 {
-	int wholeString;
 	int halfString;
 	int length;
-	int odd;
 
 	length = _strlen(str);
-	if (length % 2 == 1)
+	halfString = 0;
+	while (halfString < length)
 	{
-		odd = (length - 1) / 2;
-		while (str[odd])
-		{
-			_putchar(str[odd]);
-			odd++;
-		}
-	}
-	else
-	{
-		wholeString = 0;
-		while (str[wholeString])
-		{
-			wholeString++;
-		}
-		halfString = wholeString / 2;
-		while (str[halfString])
+		if (halfString > (length - 1) / 2)
 		{
 			_putchar(str[halfString]);
-			halfString++;
 		}
+		halfString++;
 	}
 	_putchar('\n');
 }
