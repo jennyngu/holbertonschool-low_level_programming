@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- *puts_half - prints half a string
- *@str: *str is the pointer parameter
- *Return: nothing because void
+ *_strlen - counts number of characters in a string ie. length
+ *@s: pointer parameter, string
+ *Return: return length of the string
  */
-
 int _strlen(char *s)
 {
 	int count;
@@ -17,16 +16,30 @@ int _strlen(char *s)
 	}
 	return (count);
 }
+/**
+ *puts_half - prints half a string
+ *@str: *str is the pointer parameter
+ *Return: nothing because void
+ */
+
 void puts_half(char *str)
 {
 	int wholeString;
 	int halfString;
-       	int length;
+	int length;
 	int odd;
 
 	length = _strlen(str);
-	odd = (length - 1) / 2;
-	if (length % 2 == 0)
+	if (length % 2 == 1)
+	{
+		odd = (length - 1) / 2;
+		while (str[odd])
+		{
+			_putchar(str[odd]);
+			odd++;
+		}
+	}
+	else
 	{
 		wholeString = 0;
 		while (str[wholeString])
@@ -40,13 +53,5 @@ void puts_half(char *str)
 			halfString++;
 		}
 	}
-		else
-		{
-			while (str[odd])
-			{
-				_putchar(str[odd]);
-				odd++;
-			}
-		}
 	_putchar('\n');
 }
