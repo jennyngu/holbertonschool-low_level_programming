@@ -16,7 +16,7 @@ char *string_toupper(char *ptr)
 		 *if index i is > than ascii value of 'a'(97)
 		 *and < value of 'z'(122)
 		 */
-		if (ptr[i] > 'a' && ptr[i] < 'z')
+		if (ptr[i] >= 'a' && ptr[i] <= 'z')
 		{
 			/**
 			 *change value of i to the ascii num - 32

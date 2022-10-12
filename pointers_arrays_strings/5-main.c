@@ -1,18 +1,19 @@
-#include "main.h"
 #include <stdio.h>
 
+char *string_toupper(char *);
+
 /**
- * main - check the code
+ * main - check the code for Holberton School students.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char str[] = "Look up!\n";
-    char *ptr;
+	char s[] = "Talk is cheap. Show me the code.\n";
+	char *p;
 
-    ptr = string_toupper(str);
-    printf("%s", ptr);
-    printf("%s", str);
-    return (0);
+	p = string_toupper(s);
+	printf("%s", p);
+	printf("%s", s);
+	return (0);
 }
