@@ -7,13 +7,25 @@
 
 char *string_toupper(char *ptr)
 {
-	while (*ptr != '\0')
+	int i;
+
+	i = 0;
+	while (ptr[i] != '\0')
 	{
-		if (*ptr > 'a' && *ptr < 'z')
+		/**
+		 *if index i is > than ascii value of 'a'(97)
+		 *and < value of 'z'(122)
+		 */
+		if (ptr[i] > 'a' && ptr[i] < 'z')
 		{
-			*ptr = *ptr - 32;
+			/**
+			 *change value of i to the ascii num - 32
+			 *(32 is the diff b/w lower and upper on ascii table)
+			 */
+			ptr[i] = ptr[i] - 32;
 		}
-		ptr++;
+		i++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
