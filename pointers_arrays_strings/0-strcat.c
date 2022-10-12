@@ -6,46 +6,27 @@
  *Return: pointer to the resulting string dest
  */
 
-int _strlen(char *s)
-{
-	int count;
-
-	count = 0;
-	while (s[count] != '\0')
-	{
-		count++;
-		s++;
-	}
-	return (count);
-}
 char *_strcat(char *dest, char *src)
 {
 	int i;
-	int length1;
-	int length2;
+	int j;
 
-	length1 = _strlen(dest);
-	length2 = _strlen(src);
 	i = 0;
-	while (i <= length2)
-	{
-		dest[length1 + i] = src[i];
-		i++;
-	}
-	dest[length1 +1] = '\0';
-	return (dest);
-	/**while (dest[i] != '\0')
+	/*iterating through first string*/
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
 	j = 0;
+	/*iterating through second string*/
 	while (src[j] != '\0')
 	{
+		/*at this point index i in dest[i] is at the end of the string*/
+		/*concat start of src[j] to end of dest[i] string*/
 		dest[i] = src[j];
 		j++;
-		src++;
+		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
-	*/
 }
