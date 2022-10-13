@@ -19,7 +19,7 @@ char *cap_string(char *ptr)
 				ptr[i] = ptr[i] - 32;
 			}
 		}
-		while (ptr[i] < 'A' || ptr[i] > 'z')
+		while ((ptr[i] < 'A' || ptr[i] > 'Z') && (ptr[i] < 'a' || ptr[i] > 'z'))
 		{
 			i++;
 			if (ptr[i] >= 'a' && ptr[i] <= 'z')
