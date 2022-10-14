@@ -10,25 +10,30 @@ char *cap_string(char *ptr)
 	int i;
 
 	i = 0;
-	while (ptr[i] != '\0')
+	while (ptr[i])
 	{
-		if (ptr[i] == 0)
+		while (!(ptr[i] >= 'a' && ptr[i] <= 'z'))
 		{
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
+			i = i + 1;
 		}
-		while ((ptr[i] < 'A' || ptr[i] > 'Z') && (ptr[i] < 'a' || ptr[i] > 'z'))
+		if (ptr[i - 1] == ' ' ||
+		    ptr[i - 1] == '\t' ||
+		    ptr[i - 1] == '\n' ||
+		    ptr[i - 1] == ',' ||
+		    ptr[i - 1] == ';' ||
+		    ptr[i - 1] == '.' ||
+		    ptr[i - 1] == '!' ||
+		    ptr[i - 1] == '?' ||
+		    ptr[i - 1] == '"' ||
+		    ptr[i - 1] == '(' ||
+		    ptr[i - 1] == ')' ||
+		    ptr[i - 1] == '{' ||
+		    ptr[i - 1] == '}' ||
+		    i == 0)
 		{
-			i++;
-			if (ptr[i] >= 'a' && ptr[i] <= 'z')
-			{
-				ptr[i] = ptr[i] - 32;
-			}
+			ptr[i] = ptr[i] - 32;
 		}
 		i++;
 	}
-	ptr[i] = '\0';
 	return (ptr);
 }
