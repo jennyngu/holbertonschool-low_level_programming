@@ -22,5 +22,10 @@ char *_strchr(char *s, char c)
 		/*iterate through the value pointed to by s*/
 		s = s + 1;
 	}
+	/*if c is the null char, return value pointed by s ie. null char*/
+	if (c == '\0')
+	{
+		return (s);
+	}
 	return (NULL);
 }
