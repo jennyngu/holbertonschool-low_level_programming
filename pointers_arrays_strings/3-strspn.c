@@ -3,8 +3,7 @@
 /**
  *_strspn - finds length of a prefix substring
  *@s: pointer to a string
- *@accept: pointer to a string
- *accept: pointer to a string that contains chars that need to be found in s
+ *@accept: pointer to a string that contains chars that need to be found in s
  *Return: length of substring
  */
 
