@@ -2,7 +2,7 @@
 /**
  *leet - replaces specific letters with numbers
  *@c: pointer to string
- *return: replaced string
+ *Return: replaced string
  */
 
 char *leet(char *c)
