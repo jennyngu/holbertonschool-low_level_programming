@@ -1,5 +1,11 @@
 #include "main.h"
 #include <stddef.h>
+/**
+ *_strspn - finds length of a prefix substring
+ *@s: pointer to a string
+ *accept: pointer to a string that contains chars that need to be found in s
+ *Return: length of substring
+ */
 
 unsigned int _strspn(char *s, char *accept)
 {
