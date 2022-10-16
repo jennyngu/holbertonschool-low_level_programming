@@ -4,13 +4,14 @@
  *@a: array of 8 char
  *Return: rows and columns printing chess pieces
  */
+
 void print_chessboard(char (*a)[8])
 {
 	int rows;
 	int columns;
 
 	rows = 0;
-	while (rows <= 8)
+	while (rows < 8)
 	{
 		columns = 0;
 		while (columns < 8)
