@@ -1,4 +1,4 @@
-#if !defined(HEADER_FILE)
+#ifndef HEADER_FILE
 #define HEADER_FILE
 int _putchar(char c);
 int _islower(int c);
