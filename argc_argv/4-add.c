@@ -1,19 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-/**
- *_isalpha - checks for alphabet characters
- *@c: is the argument passed into the function ie. is being checked
- *Return: return 1 if the c argument is a letter, return 0 otherwise
- */
 
-int _isalpha(int c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
-}
 /**
  *main - adds positive numbers in the command line
  *@argc: number of arguments in the command line
@@ -21,29 +9,34 @@ int _isalpha(int c)
  *Return: 1 if command line contains non-digits, 0 if successful
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int i;
+	int j;
 	int sum;
 
-	i = 0;
-	if (argc > 1)
+	sum = 0;
+	if (argc <= 1)
 	{
-		while (i < argc)
+		printf("0\n");
+		return (0);
+	}
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			if (_isalpha(*argv[i]) == 1)
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
-			sum = sum + atoi(argv[i]);
-			i = i + 1;
+			j = j + 1;
 		}
-		printf("%d\n", sum);
+		sum = sum + atoi(argv[i]);
+		i = i + 1;
 	}
-	else if (argc == 1)
-	{
-		printf("0\n");
-	}
+	printf("%d\n", sum);
 	return (0);
 }
