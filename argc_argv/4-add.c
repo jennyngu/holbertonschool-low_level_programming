@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	int sum;
 
 	sum = 0;
+	/*print 0 if only one or less arguments in the command line*/
 	if (argc <= 1)
 	{
 		printf("0\n");
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
+		/*iterate through long ints to check no non-digit appear*/
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
