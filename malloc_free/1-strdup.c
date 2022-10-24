@@ -34,8 +34,12 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	/*allocate string_copy memory space of str length * size of str(char)*/
-	string_copy = malloc((string_length(str) + 1) * sizeof(str));
+	/*allocate string_copy memory space of str length * size of char*/
+	string_copy = malloc((string_length(str) + 1) * sizeof(char));
+	if (string_copy == NULL)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (str[i] != '\0')
 	{
