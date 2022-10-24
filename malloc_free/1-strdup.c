@@ -27,7 +27,7 @@ int string_length(char *s)
 
 char *_strdup(char *str)
 {
-	char *string_copy;
+	char *str_copy;
 	int i;
 
 	if (str == NULL)
@@ -35,17 +35,17 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	/*allocate string_copy memory space of str length * size of char*/
-	string_copy = malloc((string_length(str) + 1) * sizeof(char));
-	if (string_copy == NULL)
+	str_copy = (char *) malloc((string_length(str) + 1) * sizeof(str_copy));
+	if (str_copy == NULL)
 	{
 		return (NULL);
 	}
 	i = 0;
 	while (str[i] != '\0')
 	{
-		string_copy[i] = str[i];
+		str_copy[i] = str[i];
 		i = i + 1;
 	}
-	string_copy[i] = '\0';
-	return (string_copy);
+	str_copy[i] = '\0';
+	return (str_copy);
 }
