@@ -29,19 +29,23 @@ int string_length(char *s)
 
 char *str_concat(char *s1, char *s2)
 {
-	int i;
-	int j;
+	unsigned int i;
+	unsigned int j;
 	char *cat;
-	int concat_len;
-	int s1_len;
+	unsigned int concat_len;
+	unsigned int s1_len;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	s1_len = string_length(s1);
 	/*get full length of concatenated string to assign memory space*/
 	concat_len = string_length(s1) + string_length(s2);
-	if (s1 == NULL || s2 == NULL)
-	{
-		return ("");
-	}
 	cat = malloc((concat_len + 1) * sizeof(*cat));
 	if (cat == NULL)
 	{
@@ -57,12 +61,11 @@ char *str_concat(char *s1, char *s2)
 	j = 0;
 	/*at this point i is at the end of the string*/
 	/*iterate through s2 to add onto end of concatenated string*/
-	while (i < concat_len)
+	while (i <= concat_len)
 	{
 		cat[i] = s2[j];
 		i = i + 1;
 		j = j + 1;
 	}
-	cat[i] = '\0';
 	return (cat);
 }
