@@ -11,41 +11,39 @@
 
 int **alloc_grid(int width, int height)
 {
-	int i;
-	int *values_in_array;
-	int **array_of_rows;
+	int rows;
+	int columns;
+	int **array;
 
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
-	/*mallocs full size of array*/
-	values_in_array = malloc(sizeof(*values_in_array) * height * width);
-	/*mallocs values for each start of rows*/
-	array_of_rows = malloc(sizeof(*array_of_rows) * height);
-	if (values_in_array == NULL)
-	{
+	/*mallocs values for start of each row*/
+	array = malloc(sizeof(*array) * height);
+	if (array == NULL)
 		return (NULL);
-	}
-	if (array_of_rows == NULL)
+	rows = 0;
+	while (rows < height)
 	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < height)
-	{
-		     /*gives address of the start of each row*/
-		array_of_rows[i] = values_in_array + i * width;
-		if (array_of_rows[i] == NULL)
+		/*mallocs for each element inside array*/
+		array[rows] = malloc(sizeof(*array[rows]) * width);
+		if (array[rows] == NULL)
 		{
-			while (i--)
+			rows = 0;
+			while (rows < height)
 			{
-				free(array_of_rows[1]);
+				free(array[rows]);
+				rows = rows + 1;
 			}
-			free(array_of_rows);
+			free(array);
 			return (NULL);
 		}
-		i = i + 1;
+		columns = 0;
+		while (columns < width)
+		{
+			array[rows][columns] = 0;
+			columns = columns + 1;
+		}
+		rows = rows + 1;
 	}
-	return (array_of_rows);
+	return (array);
 }
