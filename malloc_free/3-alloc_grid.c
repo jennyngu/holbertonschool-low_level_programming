@@ -23,13 +23,14 @@ int **alloc_grid(int width, int height)
 	values_in_array = malloc(sizeof(*values_in_array) * height * width);
 	if (values_in_array == NULL)
 	{
+		free(values_in_array);
 		return (NULL);
 	}
 	/*mallocs values for each start of rows*/
 	array_of_rows = malloc(sizeof(*array_of_rows) * height);
 	if (array_of_rows == NULL)
 	{
-		free(values_in_array);
+		free(array_of_rows);
 		return (NULL);
 	}
 	i = 0;
