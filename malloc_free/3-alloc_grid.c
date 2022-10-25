@@ -21,16 +21,16 @@ int **alloc_grid(int width, int height)
 	}
 	/*mallocs full size of array*/
 	values_in_array = malloc(sizeof(*values_in_array) * height * width);
-	if (values_in_array == NULL)
-	{
-		free(values_in_array);
-		return (NULL);
-	}
 	/*mallocs values for each start of rows*/
 	array_of_rows = malloc(sizeof(*array_of_rows) * height);
-	if (array_of_rows == NULL)
+	if (values_in_array == NULL)
 	{
 		free(array_of_rows);
+		return (NULL);
+	}
+	if (array_of_rows == NULL)
+	{
+		free(values_in_array);
 		return (NULL);
 	}
 	i = 0;
