@@ -11,8 +11,9 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *pointer;
+	void *pointer;
 	unsigned int i;
+	char *pointer_reset;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -21,10 +22,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (pointer == NULL)
 		return (NULL);
 	i = 0;
-	/*sets memory of each address to 0*/
+	/*give pointer_reset same address pointer is pointing to*/
+	/*set memory of each address to 0*/
+	pointer_reset = pointer;
 	while (i < (nmemb * size))
 	{
-		pointer[i] = 0;
+		pointer_reset[i] = 0;
 		i = i + 1;
 	}
 	return (pointer);
