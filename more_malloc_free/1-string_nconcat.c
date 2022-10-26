@@ -61,5 +61,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i = i + 1;
 		j = j + 1;
 	}
+	concatenated[i] = '\0';
 	return (concatenated);
 }
