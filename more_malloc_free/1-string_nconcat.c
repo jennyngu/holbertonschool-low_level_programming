@@ -31,19 +31,22 @@ int string_length(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int s1_len;
-/*	unsigned int s2_len;*/
+	unsigned int s2_len;
 	unsigned int i;
 	unsigned int j;
 	char *concatenated;
-/*	unsigned int concat_len;*/
+	/*	unsigned int concat_len;*/
 
 	s1_len = string_length(s1);
-/*	s2_len = string_length(s2);*/
+	s2_len = string_length(s2);
+/*	concat_len = s1_len + s2_len;*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	concatenated = malloc(sizeof(*concatenated) * n);
+	if (s2_len <= n)
+		s2_len = n;
+	concatenated = malloc((sizeof(*concatenated) * s1_len) + n);
 	if (concatenated == NULL)
 		return (NULL);
 	i = 0;
