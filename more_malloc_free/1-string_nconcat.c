@@ -46,7 +46,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	if (s2_len <= n)
 		s2_len = n;
-	concatenated = malloc((sizeof(*concatenated) * s1_len) + n);
+	concatenated = malloc((sizeof(*concatenated) * s1_len + 1) + n);
 	if (concatenated == NULL)
 		return (NULL);
 	i = 0;
