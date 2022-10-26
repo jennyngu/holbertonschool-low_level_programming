@@ -31,12 +31,14 @@ int string_length(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int s1_len;
+/*	unsigned int s2_len;*/
 	unsigned int i;
 	unsigned int j;
 	char *concatenated;
 /*	unsigned int concat_len;*/
 
 	s1_len = string_length(s1);
+/*	s2_len = string_length(s2);*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -52,8 +54,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i = i + 1;
 	}
 	j = 0;
-	/*add on s2 chars while it is <= given number of n bytes*/
-	while (j <= n)
+	/*add on s2 chars while it is < given number of n bytes*/
+	while (j < n)
 	{
 		concatenated[i] = s2[j];
 		i = i + 1;
