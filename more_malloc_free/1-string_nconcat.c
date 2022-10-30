@@ -35,22 +35,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 	unsigned int j;
 	char *concatenated;
-	/*	unsigned int concat_len;*/
 
-	s1_len = string_length(s1);
-	s2_len = string_length(s2);
-/*	concat_len = s1_len + s2_len;*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (s2_len <= n)
-		s2_len = n;
-	concatenated = malloc((sizeof(*concatenated) * s1_len + 1) + n);
+	s1_len = string_length(s1);
+	s2_len = string_length(s2);
+	if (n >= s2_len)
+		n = s2_len;
+	concatenated = malloc((sizeof(*concatenated) * (s1_len + 1) + n));
 	if (concatenated == NULL)
 		return (NULL);
 	i = 0;
-	/*iterate to s1 to pass string to start of concatentaed string*/
+	/*iterate to s1 to pass string to start of concatenated string*/
 	while (i < s1_len)
 	{
 		concatenated[i] = s1[i];
