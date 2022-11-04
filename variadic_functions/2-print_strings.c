@@ -3,7 +3,7 @@
 #include "variadic_functions.h"
 
 /**
- *print_string - prints a string
+ *print_strings - prints a string
  *@separator: string printed between strings
  *@n: number of strings passed to func
  *Return: Nothing, void
