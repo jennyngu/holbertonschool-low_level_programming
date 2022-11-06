@@ -38,9 +38,10 @@ void print_string(va_list type)
 {
 	char *string;
 
+	string = va_arg(type, char *);
 	if (string == NULL)
 	{
-		string = "(nil)";
+		printf("(nil)");
 	}
 	printf("%s", va_arg(type, char *));
 }
