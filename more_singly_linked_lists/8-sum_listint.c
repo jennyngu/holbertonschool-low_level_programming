@@ -18,6 +18,10 @@ int sum_listint(listint_t *head)
 	{
 		return (0);
 	}
+	if (head->next == NULL)
+	{
+		return (head->n);
+	}
 	while (head != NULL)
 	{
 		ptr = head->next;
