@@ -11,6 +11,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	int change_bit = 1;
 
+	if (index > 32)
+	{
+		return (-1);
+	}
 	*n ^= (-change_bit ^ *n) & (1ul << index);
 	return (change_bit);
 }
