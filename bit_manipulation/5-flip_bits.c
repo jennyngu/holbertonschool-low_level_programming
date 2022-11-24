@@ -33,7 +33,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	num = 0;
 	i = 0;
-	while (i < 32)
+	while (i < 64)
 	{
 		if (get_bit(n, i) != get_bit(m, i))
 		{
