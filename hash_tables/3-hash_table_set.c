@@ -11,26 +11,33 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_item;
-	unsigned long int hash_index;
+	unsigned long int h_index;
+	unsigned long int i;
 
-	if (key == NULL || ht == NULL)
+	if (key == NULL || ht == NULL || value == NULL)
 	{
 		return (0);
+	}
+	h_index = key_index((const unsigned char *)key, ht->size);
+	i = h_index;
+	while (ht->array[i] != NULL)
+	{
+		if (strcmp(ht->array[i]->key, key) == 0)
+		{
+			free(ht->array[i]->value);
+			ht->array[i]->value = strdup(value);
+			return (1);
+		}
+		i = i + 1;
 	}
 	new_item = malloc(sizeof(*new_item));
 	if (new_item == NULL)
 	{
 		return (0);
 	}
-	hash_index = key_index((const unsigned char *)key, ht->size);
 	new_item->key = strdup(key);
 	new_item->value = strdup(value);
-	while (ht->array[hash_index] != NULL)
-	{
-		hash_index = hash_index + 1;
-		hash_index = hash_index % ht->size;
-	}
-	new_item->next = ht->array[hash_index];
-	ht->array[hash_index] = new_item;
+	new_item->next = ht->array[h_index];
+	ht->array[h_index] = new_item;
 	return (1);
 }
